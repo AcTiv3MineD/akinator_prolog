@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<meta charset="utf-8" />
 	<title>Akinator</title>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/defecto.css" />
+	<link rel="stylesheet" type="text/css" href="css/hint.min.css">
+
 </head>
 <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div id="imagen">
+					<img src="images/ojos.jpg">
+				</div>
+				<div id="caja_pregunta">
+				<div id="pregunta"></div>
+				</div>
+				<button class="btn btn-success" type="button">Si</button>
+				<button class="btn btn-danger" type="button">No</button>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.js"></script>
+	<script>
+	$(function(){
+	$("#pregunta").typed({
+	strings: [ "Tiene ojos verdes?" ],
+	typeSpeed: 0
+	});
 
+	setTimeout( function( ){
+			$("#pregunta").typed({
+	strings: [ "Tiene ojos azules?" ],
+	typeSpeed: 0
+	});
+
+	}, 3000 );
+	});
+	</script>
 </body>
 </html>
