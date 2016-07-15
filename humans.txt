@@ -1,0 +1,9 @@
+Main authors:
+César Méndez       
+Carlos Batista
+
+
+Libraries:
+Malik Dellidj -> https://codepen.io/kowlor/pen/ZYYQoy | Solar System
+Kushagra Gour -> http://kushagragour.in/lab/hint/ | Hint CSS
+Feross -> Aboukhadijeh -> feross.org
