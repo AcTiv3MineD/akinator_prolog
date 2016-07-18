@@ -7,7 +7,6 @@
 hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'no', fail, !.
 hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'en_proceso', !.
 hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'encontrado', !.
-%%hipotesis( Persona, Pregunta, desconocido ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'no', !.
 hipotesis( _, _, desconocido ).
 
 %% LISTAS %%
