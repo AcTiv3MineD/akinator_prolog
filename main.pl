@@ -4,13 +4,14 @@
 	no/1.
 
 %% HIPOTESIS %%
-hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'no', !, fail.
+hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'no', fail, !.
 hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'en_proceso', !.
 hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'encontrado', !.
+%%hipotesis( Persona, Pregunta, desconocido ) :- persona( Persona, Pregunta, Respuesta ), Respuesta == 'no', !.
 hipotesis( _, _, desconocido ).
 
 %% LISTAS %%
-lista_persona( juan_daniel_joa, [ 'es_sereno', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_negro'] ).
+lista_persona( juan_daniel_joa, [ 'tiene_barba', 'es_sereno', 'pelo_color_negro', 'tiene_lente', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_negro'] ).
 lista_persona( nelson_daniel_duran, [ 'es_pasivo', 'pelo_color_negro', 'estatura_promedio', 'peso_flaco', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
 lista_persona( jean_louis, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_pequeno', 'peso_flaco', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
 lista_persona( pierre, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_alto', 'peso_flaco', 'color_piel_negro', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
@@ -73,25 +74,35 @@ persona( Persona, Pregunta, Estado ) :-
 
 verificar_lista( Persona, Pregunta, Estado ) :-
 	lista_persona( Persona, Lista ),
-	recorrer_lista( Lista, Pregunta, Estado ).
+	recorrer_lista( Lista, Pregunta, Persona, Estado ).
 
-recorrer_lista( [ ], _, 'encontrado' ).
-recorrer_lista( [ Cabeza | Cola ], Pregunta, Estado ) :-
+recorrer_lista( [ ], Pregunta, Persona, Estado ) :-
+	revisar_correcto( Persona, Estado ), !.
+
+recorrer_lista( [ Cabeza | Cola ], Pregunta, Persona, Estado ) :-
 	verifica( Cabeza, Resultado ),
 	(
-		Resultado == 'no' -> ( Estado = 'No', Pregunta = Cabeza, fail );
+		Resultado == 'no' -> ( Estado = 'no', Pregunta = Cabeza, fail ); %% Really No instead of no :( 
 		(
 			Resultado == 'en_proceso' -> ( Estado = 'en_proceso', Pregunta = Cabeza, true );
-			recorrer_lista( Cola, Temp, Resp ),
-			Pregunta = Temp
+			recorrer_lista( Cola, Pregunta, Persona, Estado )
 		)
-	),
-	Estado = Resp.
+	).
 
 procesar_respuesta( Respuesta, Pregunta ) :-
 	(
 		Respuesta == 'no' -> negar( Pregunta );
 		validar( Pregunta )
+	).
+
+revisar_correcto( Persona, Estado ):-
+	findall( Hecho, si( Hecho ), ListaSi ),
+	lista_persona( Persona, ListaPersona ),
+	subtract( ListaSi, ListaPersona, ListaFinal ),
+	length( ListaFinal, Tam ),
+	(
+		Tam =\= 0 -> Estado = 'no';
+		Estado = 'encontrado'
 	).
 
 %% HEHE
@@ -179,3 +190,6 @@ responder_action( _Request ) :-
 		cors_enable,
 		hipotesis( Persona, NuevaPregunta, Estado ),
 		reply_json_dict( [ Persona, NuevaPregunta, Estado ] ).
+
+%%AGREGAR 
+%%test( Y ):-lista_persona( cesar_mendez, X ), append( X, [ cesarin ], Y ).

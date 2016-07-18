@@ -10,6 +10,7 @@ $( document ).ready( function( ) {
 			$( ".contenedor_pregunta" ).fadeIn();
 			$( ".inicio" ).hide();
 			$( ".no_encontrado" ).hide();
+			$( ".final" ).hide();
 
 			$( "#pregunta_actual" ).val( data[ 1 ] );
 			$( "#persona_actual" ).val( data[ 0 ] );
