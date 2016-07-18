@@ -3,7 +3,5 @@ César Méndez
 Carlos Batista
 
 
-Libraries:
-Malik Dellidj -> https://codepen.io/kowlor/pen/ZYYQoy | Solar System
-Kushagra Gour -> http://kushagragour.in/lab/hint/ | Hint CSS
-Feross -> Aboukhadijeh -> feross.org
+Images:
+Albert Einstein Art -> Taken from this articule -> https://designschool.canva.com/blog/creative-genius-quiz/
