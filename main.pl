@@ -10,275 +10,28 @@ hipotesis( Persona, Pregunta, Respuesta ) :- persona( Persona, Pregunta, Respues
 hipotesis( _, _, desconocido ).
 
 %% LISTAS %%
-lista_persona(
-juan_daniel_joa,
-[ 'es_sereno',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_negro'] ).
+lista_persona( juan_daniel_joa, [ 'es_sereno', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_negro'] ).
+lista_persona( nelson_daniel_duran, [ 'es_pasivo', 'pelo_color_negro', 'estatura_promedio', 'peso_flaco', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( jean_louis, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_pequeno', 'peso_flaco', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( pierre, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_alto', 'peso_flaco', 'color_piel_negro', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( ansel_corona, [ 'es_sociable', 'pelo_color_rubio', 'tiene_barba', 'estatura_alto', 'peso_gordo', 'es_narizu', 'color_piel_blanca', 'sexo_masculino', 'color_ojos_verde'] ).
+lista_persona( eva_concepcion, [ 'es_sociable', 'pelo_color_castano_oscuro', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_moreno', 'es_aplicado', 'sexo_femenino', 'color_ojos_marron_oscuro'] ).
+lista_persona( john_jerry_bien_aime, [ 'es_agradable', 'pelo_color_negro', 'tiene_barba', 'estatura_alto', 'peso_promedio', 'es_narizu', 'color_piel_negro', 'es_aplicado', 'sexo_masculino', 'color_ojos_negro'] ).
+lista_persona( gleyder_hernandez, [ 'es_sereno', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( angel_gonzalez, [ 'es_sociable', 'pelo_color_negro', 'tiene_barba', 'estatura_alto', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_negro'] ).
+lista_persona( oasting_ferrera, [ 'es_sociable', 'pelo_color_negro', 'tiene_barba', 'estatura_promedio', 'peso_promedio', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( francis_caceres, [ 'es_sociable', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_pequeno', 'peso_flaco', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron'] ).
+lista_persona( jesus_henriquez, [ 'es_sociable', 'pelo_color_negro', 'tiene_barba', 'estatura_promedio', 'peso_gordo', 'color_piel_blanca', 'sexo_masculino', 'color_ojos_marron'] ).
+lista_persona( gustavo_henriquez, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( martin_martinez, [ 'es_sereno', 'pelo_color_negro', 'tiene_barba', 'tiene_lente', 'estatura_pequeno', 'peso_gordo', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( isaac_perez, [ 'es_pasivo', 'pelo_color_negro', 'tiene_barba', 'estatura_alto', 'peso_gordo', 'es_narizu', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( dewyn_liriano, [ 'es_sociable', 'pelo_color_castano', 'tiene_barba', 'estatura_alto', 'peso_gordo', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron_oscuro'] ).
+lista_persona( stanley_de_moya, [ 'es_sociable', 'pelo_color_castano', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron'] ).
+lista_persona( jose_miguel_marcano, [ 'es_sociable', 'pelo_color_castano', 'tiene_lente', 'estatura_promedio', 'peso_gordo', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron'] ).
+lista_persona( cesar_mendez, [ 'es_sociable', 'pelo_color_negro', 'estatura_alto', 'peso_flaco', 'color_piel_moreno', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron'] ).
+lista_persona( carlos_batista, [ 'es_sociable', 'pelo_color_castano', 'estatura_promedio', 'peso_promedio', 'es_narizu', 'color_piel_blanca', 'es_aplicado', 'sexo_masculino', 'color_ojos_marron'] ).
 
-
-lista_persona(
-nelson_daniel_duran,
-[ 'es_pasivo',
-'pelo_color_negro',
-'estatura_promedio',
-'peso_flaco',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-lista_persona(
-jean_louis,
-[ 'es_pasivo',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_pequeno',
-'peso_flaco',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-lista_persona(
-pierre,
-[ 'es_pasivo',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_alto',
-'peso_flaco',
-'color_piel_negro',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-lista_persona(
-ansel_corona,
-[ 'es_sociable',
-'pelo_color_rubio',
-'tiene_barba',
-'estatura_alto',
-'peso_gordo',
-'es_narizu',
-'color_piel_blanca',
-'sexo_masculino',
-'color_ojos_verde'] ).
-
-
-lista_persona(
-eva_concepcion,
-[ 'es_sociable',
-'pelo_color_castano_oscuro',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_femenino',
-'color_ojos_marron_oscuro'] ).
-
-
-lista_persona(
-john_jerry_bien_aime,
-[ 'es_agradable',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_alto',
-'peso_promedio',
-'es_narizu',
-'color_piel_negro',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_negro'] ).
-
-
-lista_persona(
-gleyder_hernandez,
-[ 'es_sereno',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-lista_persona(
-angel_gonzalez,
-[ 'es_sociable',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_alto',
-'peso_promedio',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_negro'] ).
-
-
-lista_persona(
-oasting_ferrera,
-[ 'es_sociable',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_promedio',
-'peso_promedio',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-lista_persona(
-francis_caceres,
-[ 'es_sociable',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_pequeno',
-'peso_flaco',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
-
-lista_persona(
-jesus_henriquez,
-[ 'es_sociable',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_promedio',
-'peso_gordo',
-'color_piel_blanca',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
-
-lista_persona(
-gustavo_henriquez,
-[ 'es_pasivo',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_blanca',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-
-lista_persona(
-martin_martinez,
-[ 'es_sereno',
-'pelo_color_negro',
-'tiene_barba',
-'tiene_lente',
-'estatura_pequeno',
-'peso_gordo',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-lista_persona(
-isaac_perez,
-[ 'es_pasivo',
-'pelo_color_negro',
-'tiene_barba',
-'estatura_alto',
-'peso_gordo',
-'es_narizu',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-lista_persona(
-dewyn_liriano,
-[ 'es_sociable',
-'pelo_color_castano',
-'tiene_barba',
-'estatura_alto',
-'peso_gordo',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron_oscuro'] ).
-
-
-
-lista_persona(
-stanley_de_moya,
-[ 'es_sociable',
-'pelo_color_castano',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
-
-
-lista_persona(
-jose_miguel_marcano,
-[ 'es_sociable',
-'pelo_color_castano',
-'tiene_lente',
-'estatura_promedio',
-'peso_gordo',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
-
-lista_persona(
-cesar_mendez,
-[ 'es_sociable',
-'pelo_color_negro',
-'estatura_alto',
-'peso_flaco',
-'color_piel_moreno',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
-
-lista_persona(
-carlos_batista,
-[ 'es_sociable',
-'pelo_color_castano',
-'estatura_promedio',
-'peso_promedio',
-'es_narizu',
-'color_piel_blanca',
-'es_aplicado',
-'sexo_masculino',
-'color_ojos_marron'] ).
-
+%% CATEGORIAS
 categoria( color_pelo, pelo_color_negro ).
 categoria( color_pelo, pelo_color_rubio ).
 categoria( color_pelo, pelo_color_castano_oscuro ).
@@ -316,13 +69,13 @@ categoria( responsabilidad, es_aplicado ).
 
 %% PERSONAS %%
 persona( Persona, Pregunta, Estado ) :-
-	verificar_lista( Persona, Pregunta, Estado ).
+	verificar_lista( Persona, Pregunta, Estado ), !.
 
 verificar_lista( Persona, Pregunta, Estado ) :-
 	lista_persona( Persona, Lista ),
 	recorrer_lista( Lista, Pregunta, Estado ).
 
-recorrer_lista( [ ], Pregunta, 'encontrado' ).
+recorrer_lista( [ ], _, 'encontrado' ).
 recorrer_lista( [ Cabeza | Cola ], Pregunta, Estado ) :-
 	verifica( Cabeza, Resultado ),
 	(
@@ -360,7 +113,7 @@ tachar_diferente( [ Cabeza | Cola ], X ) :-
 	negar( Cabeza ),
 	tachar_diferente( Cola, X ), !.
 
-tachar_diferente( [ Cabeza | Cola ], X ) :-
+tachar_diferente( [ _ | Cola ], X ) :-
 	tachar_diferente( Cola, X ).
 
 
