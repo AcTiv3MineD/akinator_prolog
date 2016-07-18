@@ -11,49 +11,54 @@
 
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="contenido_sistema">
 		<div class="row">
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<div id="imagen">
-					<img src="images/ojos.jpg">
+					<img src="images/banner.png">
 				</div>
-				<div id="caja_pregunta">
-					<div id="pregunta"></div>
-				</div>
+				<div style="display:none;" class="contenedor_pregunta">
+					<div id="caja_pregunta">
+						<div id="pregunta"></div>
+					</div>
 
-				<div id="botones">
-					<button class="btn btn-success" type="button">Si</button>
-					<button class="btn btn-danger pull-right" type="button">No</button>
+					<div id="botones">
+						<button class="btn respuesta btn-success" rel="si" type="button">Si</button>
+						<button class="btn respuesta btn-danger pull-right" rel="no" type="button">No</button>
+					</div>
+				</div>
+				<div class="final" style="display: none;">
+					<div class="alert alert-success">
+						Pensaste en: <strong class="resultado"></strong>
+					</div>
+				</div>
+				<div class="no_encontrado" style="display: none;">
+					<div class="alert alert-danger">
+						Lo sentimos, nuestra base de conocimiento no ha podido dar con quien piensas :(.
+					</div>
+				</div>
+				<div class="inicio">
+					<button class="btn btn-primary" id="iniciar_partida" type="button">Iniciar partida</button>
 				</div>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
 	</div>
 	
+	<input type="hidden" id="pregunta_actual" value="" />
+	<input type="hidden" id="persona_actual" value="" />
 	<footer class="footer">
 		<div class="container">
 		<p class="text-muted">Creado por: <a href="#">Carlos Batista [ 2012-1517 ]</a> | <a href="#">C&eacute;sar M&eacute;ndez[ 2013-0262 ]</a></p>
 		</div>
 	</footer>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/typed.js"></script>
-	<script>
-	$(function(){
-	$("#pregunta").typed({
-	strings: [ "Tiene ojos verdes?" ],
-	typeSpeed: 0
-	});
-
-	setTimeout( function( ){
-			$("#pregunta").typed({
-	strings: [ "Tiene ojos azules?" ],
-	typeSpeed: 0
-	});
-
-	}, 3000 );
-	});
-	</script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/typed.js"></script>
+	<script type="text/javascript" src="js/ejs.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/dictionary.js"></script>
+	<script type="text/javascript" src="js/general.js"></script>
 </body>
 </html>

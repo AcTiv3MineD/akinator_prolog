@@ -14,11 +14,17 @@ body {
 	padding: 5px;
 	border-radius: 3px;
 	float: left;
+	margin-bottom: 10px;
 }
 
 #imagen img {
 	width: 100%;
 	float: left;
+}
+
+.inicio, .final, .no_encontrado {
+	float: left;
+	width: 100%;
 }
 
 #caja_pregunta {
@@ -82,9 +88,9 @@ body {
 
 
 #botones {
-	margin-top: 10px;
 	float: left;
 	width: 100%;
+	margin-top: 10px;
 }
 
 /* Sticky footer styles
